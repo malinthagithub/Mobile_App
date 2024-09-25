@@ -1,0 +1,84 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Recipe Image View -->
+        <ImageView
+            android:id="@+id/recipeImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+           /> <!-- Added a placeholder image -->
+
+        <!-- Upload Button -->
+        <Button
+            android:id="@+id/uploadImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Recipe Image"/>
+
+        <!-- Ingredients Container -->
+        <LinearLayout
+            android:id="@+id/ingredientsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Initial Ingredients EditText -->
+            <EditText
+                android:id="@+id/ingredientInput1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter ingredient"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <!-- Add Ingredient Button -->
+        <Button
+            android:id="@+id/addIngredientButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Another Ingredient"/>
+
+        <!-- Instructions Container -->
+        <LinearLayout
+            android:id="@+id/instructionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Initial Instructions EditText -->
+            <EditText
+                android:id="@+id/instructionStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter step 1"
+                android:inputType="textMultiLine"
+                android:minLines="3"/>
+
+        </LinearLayout>
+
+        <!-- Add Instruction Button -->
+        <Button
+            android:id="@+id/addInstructionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Another Step"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submitRecipeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Recipe"/>
+
+    </LinearLayout>
+</ScrollView>
