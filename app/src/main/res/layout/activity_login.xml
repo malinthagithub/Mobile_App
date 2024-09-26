@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@drawable/img_4"
-    tools:context=".logi">
+    tools:context=".login">
 
     <!-- Title TextView -->
     <TextView
