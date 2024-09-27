@@ -31,7 +31,9 @@ public class profile extends AppCompatActivity {
     private TextView displayUsername;
     private ImageView profileImage;
     private Button uploadButton,myRecipesButton;
-
+    private ImageView homeIcon;
+    private ImageView categoryIcon;
+    private ImageView profileIcon;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private StorageReference mStorage;
@@ -46,6 +48,9 @@ public class profile extends AppCompatActivity {
         profileImage = findViewById(R.id.profileImage);
         uploadButton = findViewById(R.id.uploadButton);
         myRecipesButton=findViewById(R.id.myRecipesButton);
+        homeIcon=findViewById(R.id.homeIcon);
+        categoryIcon=findViewById(R.id.categoryIcon);
+        profileIcon=findViewById(R.id.profileIcon);
         // Initialize Firebase
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
@@ -59,6 +64,19 @@ public class profile extends AppCompatActivity {
        myRecipesButton.setOnClickListener(v -> {
             startActivity(new Intent(profile.this, RecipesAdd.class));
         });
+        homeIcon.setOnClickListener(v -> {
+            // Redirect to RegisterActivity
+            startActivity(new Intent(profile.this, MainActivity.class));
+        });
+        categoryIcon.setOnClickListener(v -> {
+            // Redirect to RegisterActivity
+            startActivity(new Intent(profile.this, category.class));
+        });
+        profileIcon.setOnClickListener(v -> {
+            // Redirect to RegisterActivity
+            startActivity(new Intent(profile.this, profile.class));
+        });
+
     }
 
     private void loadUserData() {
@@ -74,7 +92,9 @@ public class profile extends AppCompatActivity {
                         if (userProfile.getProfileImageUrl() != null && !userProfile.getProfileImageUrl().isEmpty()) {
                             Glide.with(this)
                                     .load(userProfile.getProfileImageUrl())
+                                    .circleCrop()  // This makes the image circular
                                     .into(profileImage);
+
                         }
                     }
                 } else {

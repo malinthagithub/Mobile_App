@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/black">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
+            android:background="@drawable/baseline_image_24"
            /> <!-- Added a placeholder image -->
 
         <!-- Upload Button -->
@@ -23,6 +25,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload Recipe Image"/>
+        <!-- Add this in activity_recipes_add.xml -->
+        <EditText
+            android:id="@+id/recipeNameInput"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_height="wrap_content"
+            android:hint="Enter recipe name"
+            android:textSize="16sp"
+            android:padding="10dp"/>
 
         <!-- Ingredients Container -->
         <LinearLayout
@@ -35,6 +47,8 @@
             <EditText
                 android:id="@+id/ingredientInput1"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:layout_height="wrap_content"
                 android:hint="Enter ingredient"
                 android:inputType="text"/>
@@ -59,6 +73,8 @@
             <EditText
                 android:id="@+id/instructionStep1"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:layout_height="wrap_content"
                 android:hint="Enter step 1"
                 android:inputType="textMultiLine"

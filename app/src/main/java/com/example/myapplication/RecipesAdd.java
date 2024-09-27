@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -40,6 +41,7 @@ public class RecipesAdd extends AppCompatActivity {
 
     private ArrayList<EditText> ingredientInputs = new ArrayList<>();
     private ArrayList<EditText> instructionInputs = new ArrayList<>();
+    private EditText recipeNameInput; // Add recipe name input
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class RecipesAdd extends AppCompatActivity {
         addInstructionButton = findViewById(R.id.addInstructionButton);
         submitRecipeButton = findViewById(R.id.submitRecipeButton);
         instructionsContainer = findViewById(R.id.instructionsContainer);
+        recipeNameInput = findViewById(R.id.recipeNameInput); // Initialize recipe name input
 
         // Add the first ingredient and instruction field manually (which are already present in the layout)
         ingredientInputs.add(findViewById(R.id.ingredientInput1));
@@ -124,6 +127,7 @@ public class RecipesAdd extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null && imageUri != null) {
             String userId = user.getUid();
+            String recipeName = recipeNameInput.getText().toString().trim(); // Get recipe name
             StorageReference fileReference = mStorage.child(userId + "/" + System.currentTimeMillis() + ".jpg");
 
             fileReference.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
@@ -146,14 +150,14 @@ public class RecipesAdd extends AppCompatActivity {
                         }
                     }
 
-                    if (ingredientsList.isEmpty() || instructionsList.isEmpty()) {
+                    if (recipeName.isEmpty() || ingredientsList.isEmpty() || instructionsList.isEmpty()) {
                         Toast.makeText(RecipesAdd.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                         return;
                     }
 
                     // Create a new recipe object
                     String recipeId = mDatabase.push().getKey();
-                    Recipe recipe = new Recipe(recipeId, userId, ingredientsList, instructionsList, recipeImageUrl);
+                    Recipe recipe = new Recipe(recipeId, userId, recipeName, ingredientsList, instructionsList, recipeImageUrl);
 
                     // Save the recipe to the Firebase Realtime Database
                     if (recipeId != null) {
