@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         homeIcon.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, MainActivity.class)));
         categoryIcon.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, category.class)));
         profileIcon.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, profile.class)));
+        recyclerView.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Recapidetails.class)));
+
     }
 
     private void loadAllRecipeImages() {
