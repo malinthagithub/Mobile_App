@@ -11,9 +11,6 @@
         android:orientation="vertical">
 
         <!-- Recipe Image View -->
-        <!-- Added a placeholder image -->
-
-        <!-- Upload Button -->
         <ImageView
             android:id="@+id/recipeImage"
             android:layout_width="match_parent"
@@ -26,16 +23,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload Recipe Image"/>
-        <!-- Add this in activity_recipes_add.xml -->
+
+        <!-- Recipe Name Input -->
         <EditText
             android:id="@+id/recipeNameInput"
             android:layout_width="match_parent"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
             android:layout_height="wrap_content"
             android:hint="Enter recipe name"
             android:textSize="16sp"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
+        <!-- Cooking Time Input -->
+        <EditText
+            android:id="@+id/cookingTimeInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter cooking time (e.g., 30 minutes)"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"/>
+
+        <!-- Video Upload Button -->
+        <Button
+            android:id="@+id/uploadVideoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Recipe Video"/>
 
         <!-- Ingredients Container -->
         <LinearLayout
@@ -48,11 +65,11 @@
             <EditText
                 android:id="@+id/ingredientInput1"
                 android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:layout_height="wrap_content"
                 android:hint="Enter ingredient"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
 
         </LinearLayout>
 
@@ -74,12 +91,12 @@
             <EditText
                 android:id="@+id/instructionStep1"
                 android:layout_width="match_parent"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:layout_height="wrap_content"
                 android:hint="Enter step 1"
                 android:inputType="textMultiLine"
-                android:minLines="3"/>
+                android:minLines="3"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
 
         </LinearLayout>
 
