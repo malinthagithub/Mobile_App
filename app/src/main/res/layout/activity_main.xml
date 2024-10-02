@@ -33,19 +33,22 @@
     <EditText
         android:id="@+id/searchBar"
         android:layout_width="0dp"
-        android:layout_height="49dp"
+        android:paddingLeft="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:hint="Search"
         android:inputType="text"
         android:padding="8dp"
-        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/searchButton"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <Button
         android:id="@+id/searchButton"
@@ -54,7 +57,7 @@
         android:layout_marginEnd="16dp"
         android:text="Search"
         android:textColor="@color/white"
-        android:backgroundTint="#FF0000"
+        android:backgroundTint="#b10007"
         app:layout_constraintTop_toTopOf="@id/searchBar"
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -85,35 +88,35 @@
         android:layout_height="75dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/home_component"
-        android:tint="@color/homeIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/homeIcon" />
 
     <ImageView
         android:id="@+id/categoryIcon"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@drawable/categories_icon"
-        android:tint="@color/categoryIconColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.975"
+        app:tint="@color/categoryIconColor" />
 
     <ImageView
         android:id="@+id/profileIcon"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:src="@drawable/profile_component"
-        android:tint="@color/profileIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintVertical_bias="0.975"
+        app:tint="@color/profileIcon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

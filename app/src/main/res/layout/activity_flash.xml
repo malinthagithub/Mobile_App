@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#C82323">
+    android:background="#b10007">
 
     <!-- You can replace this with your logo or branding -->
     <ImageView
@@ -24,7 +24,7 @@
     android:textStyle="bold"
     android:gravity="center"
     android:padding="8dp"
-    android:background="#C82323"
+    android:background="#b10007"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:layout_gravity="center"

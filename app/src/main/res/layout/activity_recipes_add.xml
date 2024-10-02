@@ -31,10 +31,10 @@
             android:id="@+id/recipeNameInput"
             android:layout_width="match_parent"
             android:textColor="@color/white"
+            android:layout_height="48dp"
             android:textColorHint="@color/white"
-            android:layout_height="wrap_content"
             android:hint="Enter recipe name"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:padding="10dp"/>
 
         <!-- Ingredients Container -->
@@ -49,9 +49,11 @@
                 android:id="@+id/ingredientInput1"
                 android:layout_width="match_parent"
                 android:textColor="@color/white"
+                android:layout_height="48dp"
                 android:textColorHint="@color/white"
-                android:layout_height="wrap_content"
                 android:hint="Enter ingredient"
+                android:textSize="18sp"
+                android:padding="10dp"
                 android:inputType="text"/>
 
         </LinearLayout>
